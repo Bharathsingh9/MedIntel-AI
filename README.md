@@ -6,11 +6,14 @@ MedIntel AI is a production-grade healthcare analytics platform that leverages M
 
 ## ✨ Core Features
 
+* **🔬 Data Engineering & Synthetic Generation:** Procedurally generated a highly realistic 100,000+ patient dataset mapping complex clinical relationships, dependencies, and physiological vitals.
+* **📊 Comprehensive Data Analytics (EDA):** Enterprise-level Exploratory Data Analysis, missing value imputation, multivariate statistical analysis, and interactive Plotly/Seaborn visualizations.
+* **🛠️ Feature Engineering:** Sophisticated data transformations, class imbalance handling (SMOTE), and categorical encodings tailored for healthcare analytics.
 * **🩺 Multi-Disease Risk Prediction:** Optimized ML pipelines predicting Diabetes, Heart Disease, Kidney Disease, and Stroke risks using complex patient biomarker data.
 * **🧠 Explainable AI:** Full transparency into ML predictions using SHAP and LIME, ensuring clinical interpretability and trust for healthcare providers.
 * **📈 Advanced Health Scoring:** Dynamic algorithms calculating Biological Age, Overall Health Index, and generating interactive health simulations.
 * **🤖 RAG Health Assistant:** An embedded, context-aware clinical AI Consultant powered by Groq LLaMA 3 and a local FAISS vector database holding specific medical guidelines.
-* **📊 Analytics Dashboard:** A blazing-fast, responsive React dashboard built with Vite, TypeScript, Tailwind CSS, Shadcn UI, and Recharts.
+* **💻 Analytics Dashboard:** A blazing-fast, responsive React dashboard built with Vite, TypeScript, Tailwind CSS, Shadcn UI, and Recharts.
 
 ## 🛠️ Technology Stack
 
@@ -20,6 +23,12 @@ MedIntel AI is a production-grade healthcare analytics platform that leverages M
 * Tailwind CSS & Shadcn UI (Styling & Components)
 * Zustand (State Management)
 * Recharts (Data Visualization)
+
+**Data Science & Analytics:**
+* Pandas, NumPy, SciPy (Data Manipulation & Statistics)
+* Matplotlib, Seaborn, Plotly (Advanced Visualizations)
+* Synthetic Data Generation & Data Quality Assessment
+* SMOTE & Class Imbalance Handling
 
 **Backend & ML Architecture:**
 * FastAPI (Python web framework)
