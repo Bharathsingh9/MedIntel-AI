@@ -1,0 +1,28 @@
+{
+    "overall_health_score": 48,
+    "health_category": "High Risk",
+    "diabetes_risk": 65,
+    "heart_risk": 58,
+    "kidney_risk": 22,
+    "stroke_risk": 35,
+    "cardiovascular_score": 35,
+    "metabolic_score": 35,
+    "lifestyle_score": 10,
+    "biological_age": 66,
+    "alerts": [
+        "Orange Alert: High Risk - Schedule a comprehensive clinical evaluation.",
+        "Biomarker Alert: Elevated Fasting Glucose indicative of active Diabetes Risk.",
+        "Biomarker Alert: Stage 2 Hypertension detected (High Cardiovascular Risk)."
+    ],
+    "recommendations": [
+        "Reduce dietary intake of refined carbohydrates and simple sugars.",
+        "Incorporate daily stress-reduction techniques such as mindfulness, meditation, or yoga.",
+        "Schedule a follow-up test to monitor HbA1c levels.",
+        "Adopt a heart-healthy diet (e.g., Mediterranean or DASH diet).",
+        "Increase daily physical activity to improve HDL and lower LDL.",
+        "Improve sleep hygiene to consistently reach 7-8 hours of restful sleep per night.",
+        "Enroll in a smoking cessation program immediately; this single action drastically reduces CVD risk.",
+        "Incorporate at least 150 minutes of moderate aerobic exercise weekly.",
+        "Target a 5-10% weight reduction to significantly lower your combined metabolic risk score."
+    ]
+}

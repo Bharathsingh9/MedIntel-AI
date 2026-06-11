@@ -1,0 +1,10 @@
+{
+    "simulated_health_score": 68,
+    "simulated_biological_age": 60,
+    "simulated_disease_probs": {
+        "diabetes": 0.5,
+        "heart": 0.28,
+        "kidney": 0.22,
+        "stroke": 0.2
+    }
+}
