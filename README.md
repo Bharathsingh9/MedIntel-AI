@@ -91,5 +91,4 @@ MedIntel-AI/
 └── requirements.txt     # Python dependencies
 ```
 
-## 🔒 Security & Privacy
-This platform is designed as a modern analytics showcase. The repository's `.gitignore` explicitly blocks `.env` secrets, large vector databases, and cache folders from being pushed.
+
