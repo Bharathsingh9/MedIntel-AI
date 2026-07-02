@@ -25,5 +25,5 @@ app.include_router(predict.router, prefix="/api")
 app.include_router(chat_routes.router, prefix="/api")
 
 @app.get("/")
-def health_check():
+def health_check() -> dict:
     return {"status": "MedIntel AI Backend is running"}
