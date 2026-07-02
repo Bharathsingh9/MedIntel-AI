@@ -11,7 +11,14 @@ engine = create_engine(
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
-def get_db():
+from typing import Generator
+from sqlalchemy.orm import Session
+
+def get_db() -> Generator[Session, None, None]:
+    """
+    Dependency to get a database session.
+    Yields a SQLAlchemy Session and ensures it is closed after use.
+    """
     db = SessionLocal()
     try:
         yield db
