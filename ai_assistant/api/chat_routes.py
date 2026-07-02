@@ -7,13 +7,15 @@ from ai_assistant.services.chat_service import ChatService
 
 router = APIRouter()
 
+import logging
+
 # Initialize Chat Service Singleton
 KB_PATH = "D:\\health-analytics-ai\\knowledge_base"
 INDEX_PATH = "D:\\health-analytics-ai\\ai_assistant\\faiss_index"
 try:
     chat_service = ChatService(kb_path=KB_PATH, index_path=INDEX_PATH, llm_provider="groq")
 except Exception as e:
-    print(f"Failed to initialize ChatService: {e}")
+    logging.error(f"Failed to initialize ChatService: {e}")
     chat_service = None
 
 class ChatRequest(BaseModel):
