@@ -18,16 +18,16 @@ function App() {
                 <Activity className="text-primary" />
                 <span className="font-bold text-xl tracking-tight text-white">MedIntel AI</span>
               </div>
-              <Link to="/app" className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-muted-foreground hover:text-white transition-colors">
+              <Link to="/app" title="Dashboard" className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-muted-foreground hover:text-white transition-colors">
                 <LayoutDashboard size={18} /> Dashboard
               </Link>
-              <Link to="/app/patient" className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-muted-foreground hover:text-white transition-colors">
+              <Link to="/app/patient" title="Patient Profile" className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-muted-foreground hover:text-white transition-colors">
                 <UserSquare2 size={18} /> Patient Profile
               </Link>
-              <Link to="/app/simulator" className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-muted-foreground hover:text-white transition-colors">
+              <Link to="/app/simulator" title="Trend Simulator" className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-muted-foreground hover:text-white transition-colors">
                 <BarChart3 size={18} /> Trend Simulator
               </Link>
-              <Link to="/app/report" className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-muted-foreground hover:text-white transition-colors">
+              <Link to="/app/report" title="Reports" className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/5 text-muted-foreground hover:text-white transition-colors">
                 <FileText size={18} /> Reports
               </Link>
             </nav>
