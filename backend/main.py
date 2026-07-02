@@ -11,7 +11,11 @@ from ai_assistant.api import chat_routes
 # Create DB Tables
 models.Base.metadata.create_all(bind=database.engine)
 
-app = FastAPI(title="MedIntel AI API")
+app = FastAPI(
+    title="MedIntel AI API",
+    description="Clinical health intelligence and predictive analytics API.",
+    version="1.0.0"
+)
 
 app.add_middleware(
     CORSMiddleware,
