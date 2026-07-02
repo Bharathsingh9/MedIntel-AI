@@ -1,6 +1,19 @@
+from typing import Dict, List
+
 class EarlyWarningSystem:
     @staticmethod
-    def generate_alerts(health_score, disease_probs, patient_data):
+    def generate_alerts(health_score: float, disease_probs: Dict[str, float], patient_data: Dict[str, float]) -> List[str]:
+        """
+        Generate actionable health alerts based on health score, disease probabilities, and patient data.
+
+        Args:
+            health_score (float): The calculated overall health score (0-100).
+            disease_probs (Dict[str, float]): A dictionary mapping disease names to their probabilities.
+            patient_data (Dict[str, float]): A dictionary containing specific biomarker values for the patient.
+
+        Returns:
+            List[str]: A list of generated alert messages.
+        """
         alerts = []
         highest_prob = max(disease_probs.values()) if disease_probs else 0
         
