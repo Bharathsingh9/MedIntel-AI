@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Activity, ArrowRight, TrendingDown } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { useNavigate } from 'react-router-dom';
 
 interface SimulationResult {
   bioAgeDelta: number;
@@ -21,13 +22,15 @@ export default function Simulator() {
   const { predictionResult } = usePatientStore();
   const [simulation, setSimulation] = useState<SimulationResult | null>(null);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   if (!predictionResult) {
     return (
       <div className="flex flex-col items-center justify-center h-full text-center">
         <Activity className="h-16 w-16 text-muted-foreground mb-4 opacity-50" />
         <h2 className="text-2xl font-bold mb-2">Simulation Unavailable</h2>
-        <p className="text-muted-foreground">Setup patient profile first.</p>
+        <p className="text-muted-foreground mb-6">Setup patient profile first.</p>
+        <Button onClick={() => navigate('/app/patient')}>Setup Patient Profile</Button>
       </div>
     );
   }
