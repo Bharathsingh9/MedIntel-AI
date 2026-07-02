@@ -1,6 +1,18 @@
+from typing import Dict, List, Any
+
 class RecommendationEngine:
     @staticmethod
-    def generate_recommendations(patient_data, disease_probs):
+    def generate_recommendations(patient_data: Dict[str, Any], disease_probs: Dict[str, float]) -> List[str]:
+        """
+        Generate personalized health recommendations based on patient data and disease probabilities.
+
+        Args:
+            patient_data (Dict[str, Any]): Dictionary containing patient health metrics and lifestyle data.
+            disease_probs (Dict[str, float]): Dictionary containing predicted probabilities for various diseases.
+
+        Returns:
+            List[str]: A list of unique recommendation strings.
+        """
         recs = []
         
         # Metabolic & Diabetes
