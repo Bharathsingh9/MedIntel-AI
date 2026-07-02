@@ -27,6 +27,8 @@ class PatientRiskPredictor:
         prep_path = os.path.join(models_dir, "preprocessor.pkl")
         if os.path.exists(prep_path):
             self.preprocessor = joblib.load(prep_path)
+        else:
+            logging.warning(f"{prep_path} not found.")
 
     def predict(self, patient_features: dict) -> dict:
         """
