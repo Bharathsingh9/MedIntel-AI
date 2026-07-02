@@ -31,7 +31,7 @@ interface PredictionResult {
   biological_age: number;
   alerts: string[];
   recommendations: string[];
-  shap_explanations: Record<string, any>;
+  shap_explanations: Record<string, { insight: string; top_drivers?: string[] }>;
 }
 
 interface PatientStore {
