@@ -26,6 +26,9 @@ except Exception as e:
 
 @router.post("/predict", response_model=schemas.PredictionResponse)
 def create_prediction(patient: schemas.PatientCreate, db: Session = Depends(database.get_db)):
+    """
+    Submit patient data to generate health predictions and recommendations.
+    """
     if not ml_predictor:
         raise HTTPException(status_code=500, detail="ML Models not loaded.")
         
