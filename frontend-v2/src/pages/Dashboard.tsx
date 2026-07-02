@@ -115,7 +115,7 @@ export default function Dashboard() {
           <CardHeader><CardTitle>SHAP Explainability Insights</CardTitle></CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {Object.entries(res.shap_explanations).map(([disease, explanation]: any, i) => (
+              {Object.entries(res.shap_explanations).map(([disease, explanation]: [string, { insight: string; top_drivers?: string[] }], i) => (
                 <div key={i} className="p-4 bg-background/50 rounded-lg border border-border/50">
                    <h4 className="font-bold capitalize mb-2">{disease} Risk Drivers</h4>
                    <p className="text-sm text-muted-foreground mb-3">{explanation.insight}</p>
