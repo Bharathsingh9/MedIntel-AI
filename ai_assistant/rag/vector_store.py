@@ -12,7 +12,8 @@ class VectorDBManager:
         self.embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
         self.vector_store = None
 
-    def build_index(self):
+    def build_index(self) -> None:
+        """Build the FAISS vector index from documents in the knowledge base."""
         print(f"Loading documents from {self.kb_path}...")
         loader = DirectoryLoader(self.kb_path, glob="**/*.md", loader_cls=TextLoader)
         docs = loader.load()
@@ -28,14 +29,24 @@ class VectorDBManager:
         self.vector_store.save_local(self.index_path)
         print(f"FAISS index saved to {self.index_path}")
 
-    def load_index(self):
+    def load_index(self) -> None:
+        """Load the FAISS vector index from the local file system."""
         if os.path.exists(self.index_path):
             self.vector_store = FAISS.load_local(self.index_path, self.embeddings, allow_dangerous_deserialization=True)
         else:
             print("Index not found. Building new index...")
             self.build_index()
 
-    def get_retriever(self, k=3):
+    def get_retriever(self, k: int = 3):
+        """
+        Get a retriever for querying the vector store.
+
+        Args:
+            k (int, optional): The number of documents to retrieve. Defaults to 3.
+
+        Returns:
+            VectorStoreRetriever: The configured retriever.
+        """
         if not self.vector_store:
             self.load_index()
         return self.vector_store.as_retriever(search_kwargs={"k": k})
