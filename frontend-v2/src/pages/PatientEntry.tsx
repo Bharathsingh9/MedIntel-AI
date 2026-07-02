@@ -46,12 +46,12 @@ export default function PatientEntry() {
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-2"><label className="text-sm">Age</label><Input type="number" name="age" value={patientData.age} onChange={handleChange} /></div>
-              <div className="space-y-2"><label className="text-sm">BMI</label><Input type="number" step="0.1" name="bmi" value={patientData.bmi} onChange={handleChange} /></div>
-              <div className="space-y-2"><label className="text-sm">Systolic BP</label><Input type="number" name="systolic_bp" value={patientData.systolic_bp} onChange={handleChange} /></div>
-              <div className="space-y-2"><label className="text-sm">Fasting Glucose</label><Input type="number" name="fasting_glucose" value={patientData.fasting_glucose} onChange={handleChange} /></div>
-              <div className="space-y-2"><label className="text-sm">Total Cholesterol</label><Input type="number" name="cholesterol_total" value={patientData.cholesterol_total} onChange={handleChange} /></div>
-              <div className="space-y-2"><label className="text-sm">HbA1c</label><Input type="number" step="0.1" name="hba1c" value={patientData.hba1c} onChange={handleChange} /></div>
+              <div className="space-y-2"><label className="text-sm">Age</label><Input type="number" min="0" name="age" value={patientData.age} onChange={handleChange} /></div>
+              <div className="space-y-2"><label className="text-sm">BMI</label><Input type="number" min="0" step="0.1" name="bmi" value={patientData.bmi} onChange={handleChange} /></div>
+              <div className="space-y-2"><label className="text-sm">Systolic BP</label><Input type="number" min="0" name="systolic_bp" value={patientData.systolic_bp} onChange={handleChange} /></div>
+              <div className="space-y-2"><label className="text-sm">Fasting Glucose</label><Input type="number" min="0" name="fasting_glucose" value={patientData.fasting_glucose} onChange={handleChange} /></div>
+              <div className="space-y-2"><label className="text-sm">Total Cholesterol</label><Input type="number" min="0" name="cholesterol_total" value={patientData.cholesterol_total} onChange={handleChange} /></div>
+              <div className="space-y-2"><label className="text-sm">HbA1c</label><Input type="number" min="0" step="0.1" name="hba1c" value={patientData.hba1c} onChange={handleChange} /></div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-border/50">
