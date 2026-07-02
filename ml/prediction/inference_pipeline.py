@@ -2,6 +2,7 @@ import os
 import joblib
 import pandas as pd
 import numpy as np
+import logging
 
 class PatientRiskPredictor:
     """
@@ -20,7 +21,7 @@ class PatientRiskPredictor:
             if os.path.exists(model_path):
                 self.models[f"{t}_risk"] = joblib.load(model_path)
             else:
-                print(f"Warning: {model_path} not found.")
+                logging.warning(f"{model_path} not found.")
                 
         # Load preprocessor
         prep_path = os.path.join(models_dir, "preprocessor.pkl")
