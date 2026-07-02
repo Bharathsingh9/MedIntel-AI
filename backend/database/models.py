@@ -20,6 +20,9 @@ class Patient(Base):
     sleep_hours = Column(Float)
     stress_level = Column(String)
 
+    def __repr__(self) -> str:
+        return f"<Patient(id={self.id}, age={self.age}, gender='{self.gender}')>"
+
 class Prediction(Base):
     __tablename__ = "predictions"
     id = Column(Integer, primary_key=True, index=True)
@@ -32,3 +35,6 @@ class Prediction(Base):
     alerts = Column(JSON)
     recommendations = Column(JSON)
     shap_explanations = Column(JSON)
+
+    def __repr__(self) -> str:
+        return f"<Prediction(id={self.id}, patient_id={self.patient_id}, health_category='{self.health_category}')>"
