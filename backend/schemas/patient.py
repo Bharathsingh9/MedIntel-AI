@@ -2,6 +2,7 @@ from pydantic import BaseModel
 from typing import List, Dict, Any
 
 class PatientCreate(BaseModel):
+    """Schema for creating a new patient record and requesting a health prediction."""
     age: int
     gender: str = "Male"
     bmi: float
@@ -19,6 +20,7 @@ class PatientCreate(BaseModel):
     stress_level: str
 
 class PredictionResponse(BaseModel):
+    """Schema for the prediction response payload containing health scores and recommendations."""
     overall_health_score: int
     health_category: str
     diabetes_risk: int
