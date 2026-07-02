@@ -1,9 +1,29 @@
+from typing import Dict, Any, Union
 from health_scoring.scoring_engine import ScoringEngine
 from health_scoring.biological_age import BiologicalAgeEstimator
 
 class HealthTrendSimulator:
     @staticmethod
-    def simulate(patient_data, disease_probs, delta_weight_kg=0, quit_smoking=False, glucose_reduction_pct=0):
+    def simulate(
+        patient_data: Dict[str, Any], 
+        disease_probs: Dict[str, float], 
+        delta_weight_kg: Union[int, float] = 0, 
+        quit_smoking: bool = False, 
+        glucose_reduction_pct: Union[int, float] = 0
+    ) -> Dict[str, Any]:
+        """
+        Simulate future health trends based on potential lifestyle changes.
+
+        Args:
+            patient_data (Dict[str, Any]): Current patient data.
+            disease_probs (Dict[str, float]): Current disease probabilities.
+            delta_weight_kg (Union[int, float], optional): Expected change in weight. Defaults to 0.
+            quit_smoking (bool, optional): Whether the patient plans to quit smoking. Defaults to False.
+            glucose_reduction_pct (Union[int, float], optional): Expected reduction in glucose. Defaults to 0.
+
+        Returns:
+            Dict[str, Any]: A dictionary containing simulated health score, biological age, and disease probabilities.
+        """
         # Create a deep copy for simulation
         sim_data = patient_data.copy()
         sim_probs = disease_probs.copy()
