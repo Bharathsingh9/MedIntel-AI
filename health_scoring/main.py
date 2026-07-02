@@ -13,7 +13,19 @@ from health_scoring.recommendation_engine import RecommendationEngine
 from health_scoring.simulator import HealthTrendSimulator
 from health_scoring.dashboard import DashboardGenerator
 
-def generate_health_payload(patient_data, disease_probs):
+from typing import Dict, Any
+
+def generate_health_payload(patient_data: Dict[str, Any], disease_probs: Dict[str, float]) -> Dict[str, Any]:
+    """
+    Generate a comprehensive health payload containing scores, risk categories, and recommendations.
+
+    Args:
+        patient_data (Dict[str, Any]): Dictionary containing patient health metrics and lifestyle data.
+        disease_probs (Dict[str, float]): Dictionary containing predicted probabilities for various diseases.
+
+    Returns:
+        Dict[str, Any]: A comprehensive payload containing all calculated health metrics.
+    """
     # 1. Scoring
     overall_health = ScoringEngine.calculate_health_score(
         disease_probs.get('diabetes',0), disease_probs.get('heart',0),
