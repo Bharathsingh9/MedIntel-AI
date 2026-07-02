@@ -1,13 +1,36 @@
+from typing import Union
+
 class ScoringEngine:
     @staticmethod
-    def calculate_health_score(diabetes_prob, heart_prob, kidney_prob, stroke_prob):
+    def calculate_health_score(diabetes_prob: float, heart_prob: float, kidney_prob: float, stroke_prob: float) -> float:
+        """
+        Calculate an overall health score based on disease probabilities.
+
+        Args:
+            diabetes_prob (float): Probability of diabetes.
+            heart_prob (float): Probability of heart disease.
+            kidney_prob (float): Probability of kidney disease.
+            stroke_prob (float): Probability of stroke.
+
+        Returns:
+            float: The calculated health score (0-100).
+        """
         # 100 - weighted sum of probabilities (scaled 0-100)
         risk = (0.3 * diabetes_prob + 0.4 * heart_prob + 0.1 * kidney_prob + 0.2 * stroke_prob) * 100
         score = 100 - risk
-        return max(0, min(100, score))
+        return max(0.0, min(100.0, score))
 
     @staticmethod
-    def get_risk_category(score):
+    def get_risk_category(score: Union[int, float]) -> str:
+        """
+        Get the risk category corresponding to a health score.
+
+        Args:
+            score (Union[int, float]): The health score.
+
+        Returns:
+            str: The risk category ('Critical', 'High Risk', 'Moderate Risk', 'Healthy', 'Excellent').
+        """
         if score <= 30: return "Critical"
         elif score <= 60: return "High Risk"
         elif score <= 80: return "Moderate Risk"
