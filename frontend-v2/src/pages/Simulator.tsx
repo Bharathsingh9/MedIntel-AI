@@ -5,9 +5,21 @@ import { Button } from '@/components/ui/button';
 import { Activity, ArrowRight, TrendingDown } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
+interface SimulationResult {
+  bioAgeDelta: number;
+  healthScoreDelta: number;
+  newBioAge: number;
+  newHealthScore: number;
+  chartData: Array<{
+    name: string;
+    Current: number;
+    Simulated: number;
+  }>;
+}
+
 export default function Simulator() {
   const { predictionResult } = usePatientStore();
-  const [simulation, setSimulation] = useState<any>(null);
+  const [simulation, setSimulation] = useState<SimulationResult | null>(null);
   const [loading, setLoading] = useState(false);
 
   if (!predictionResult) {
