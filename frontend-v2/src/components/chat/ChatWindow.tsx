@@ -86,8 +86,8 @@ export default function ChatWindow() {
         
         <div>
           <div className="flex gap-2 mb-3 overflow-x-auto pb-1 scrollbar-hide">
-             <Button variant="outline" size="sm" onClick={() => handleSuggested('Why is my diabetes risk high?')} className="whitespace-nowrap text-xs bg-background/50">Why is my diabetes risk high?</Button>
-             <Button variant="outline" size="sm" onClick={() => handleSuggested('How can I lower my biological age?')} className="whitespace-nowrap text-xs bg-background/50">How to lower biological age?</Button>
+             <Button variant="outline" size="sm" onClick={() => handleSuggested('Why is my diabetes risk high?')} disabled={loading} className="whitespace-nowrap text-xs bg-background/50">Why is my diabetes risk high?</Button>
+             <Button variant="outline" size="sm" onClick={() => handleSuggested('How can I lower my biological age?')} disabled={loading} className="whitespace-nowrap text-xs bg-background/50">How to lower biological age?</Button>
           </div>
 
           <form onSubmit={handleSend} className="flex gap-2">
