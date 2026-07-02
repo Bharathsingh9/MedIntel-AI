@@ -1,12 +1,27 @@
 import plotly.graph_objects as go
 import os
 
+from typing import Dict, Union
+
 class DashboardGenerator:
-    def __init__(self, output_dir):
+    def __init__(self, output_dir: str):
+        """
+        Initialize the DashboardGenerator.
+
+        Args:
+            output_dir (str): The directory where the generated HTML files will be saved.
+        """
         self.output_dir = output_dir
         os.makedirs(output_dir, exist_ok=True)
         
-    def generate_health_gauge(self, score, filename="health_gauge.html"):
+    def generate_health_gauge(self, score: Union[int, float], filename: str = "health_gauge.html") -> None:
+        """
+        Generate a gauge chart for the overall health score.
+
+        Args:
+            score (Union[int, float]): The health score to display.
+            filename (str): The name of the output HTML file.
+        """
         fig = go.Figure(go.Indicator(
             mode = "gauge+number",
             value = score,
@@ -23,7 +38,14 @@ class DashboardGenerator:
             }))
         fig.write_html(os.path.join(self.output_dir, filename))
         
-    def generate_risk_radar(self, scores_dict, filename="risk_radar.html"):
+    def generate_risk_radar(self, scores_dict: Dict[str, Union[int, float]], filename: str = "risk_radar.html") -> None:
+        """
+        Generate a radar chart visualizing various health risk scores.
+
+        Args:
+            scores_dict (Dict[str, Union[int, float]]): Dictionary mapping risk categories to their scores.
+            filename (str): The name of the output HTML file.
+        """
         categories = list(scores_dict.keys())
         values = list(scores_dict.values())
         
