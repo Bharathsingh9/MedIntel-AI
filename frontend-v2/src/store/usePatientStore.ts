@@ -37,6 +37,7 @@ interface PredictionResult {
 interface PatientStore {
   patientData: PatientData;
   setPatientData: (data: Partial<PatientData>) => void;
+  clearPatientData: () => void;
   predictionResult: PredictionResult | null;
   setPredictionResult: (result: PredictionResult | null) => void;
 }
@@ -51,6 +52,7 @@ const defaultPatientData: PatientData = {
 export const usePatientStore = create<PatientStore>((set) => ({
   patientData: defaultPatientData,
   setPatientData: (data) => set((state) => ({ patientData: { ...state.patientData, ...data } })),
+  clearPatientData: () => set({ patientData: defaultPatientData, predictionResult: null }),
   predictionResult: null,
   setPredictionResult: (result) => set({ predictionResult: result }),
 }));
