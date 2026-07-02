@@ -3,15 +3,19 @@ import { Button } from '@/components/ui/button';
 import { FileText, Download, Activity } from 'lucide-react';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
+import { useNavigate } from 'react-router-dom';
 
 export default function Report() {
   const { predictionResult, patientData } = usePatientStore();
+  const navigate = useNavigate();
 
   if (!predictionResult) {
     return (
       <div className="flex flex-col items-center justify-center h-full text-center">
         <Activity className="h-16 w-16 text-muted-foreground mb-4 opacity-50" />
         <h2 className="text-2xl font-bold mb-2">No Report Available</h2>
+        <p className="text-muted-foreground mb-6">Setup patient profile to generate a clinical report.</p>
+        <Button onClick={() => navigate('/app/patient')}>Setup Patient Profile</Button>
       </div>
     );
   }
